@@ -6,7 +6,7 @@
 /*   By: lboumahd <lboumahd@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:09:12 by lboumahd          #+#    #+#             */
-/*   Updated: 2024/07/15 19:27:31 by lboumahd         ###   ########.fr       */
+/*   Updated: 2024/07/16 11:32:11 by lboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	push_in_b(t_pile **a, t_pile **b)
 // 		do_best_move(a, b);
 // 	}
 // 	if(!is_sorted(a))
+		// get_position(a, b);
 // 		final_rotation(a);
 // }
 

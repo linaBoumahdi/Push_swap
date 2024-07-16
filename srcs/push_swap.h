@@ -6,7 +6,7 @@
 /*   By: lboumahd <lboumahd@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 16:13:11 by lboumahd          #+#    #+#             */
-/*   Updated: 2024/07/15 20:07:59 by lboumahd         ###   ########.fr       */
+/*   Updated: 2024/07/16 12:42:20 by lboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_pile
 	int				idx;
 	int				pos;
 	int 			target_pos;
-	// int				cost_a;
-	// int 			cost_b;
+	int				cost_a;
+	int 			cost_b;
 	struct s_pile	*next;
 	struct s_pile	*prev;
 }	t_pile;
@@ -87,15 +87,8 @@ void	set_index(t_pile *a);
 void	push_in_b(t_pile **a, t_pile **b);
 
 //sort_utils
-// void	get_target_pos(t_pile **a, int idx_b, int  *target_pos);
-void	get_target(t_pile **a, t_pile **b);
-// void	get_lowest_index_pos(t_pile **a, int *lowest_pos);
+int	get_target(t_pile **a, int idx_b, int  target_pos);
+void	get_target_pos(t_pile **a, t_pile **b);
 void get_position(t_pile **a, t_pile **b);
-
-
-//sort utils test a supprimer 
-// void	get_position(t_pile **stack);
-int	get_lowest_index_position(t_pile **stack);
-static int	get_target(t_pile **a, int b_idx,int target_idx, int target_pos);
-void	get_target_position(t_pile **a, t_pile **b);
+int	get_lowest_index_pos(t_pile **a);
 #endif

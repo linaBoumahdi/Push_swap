@@ -6,7 +6,7 @@
 /*   By: lboumahd <lboumahd@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:23:21 by lboumahd          #+#    #+#             */
-/*   Updated: 2024/07/15 13:36:05 by lboumahd         ###   ########.fr       */
+/*   Updated: 2024/07/16 12:42:34 by lboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ t_pile *set_node(int nbr)
 
 	a->value = nbr;
 	a->idx = 0;
-	a->pos = 0;
-	// a->target_pos = 0;
-	// a->cost = 0;
+	a->pos = -1;
+	a->target_pos = -1;
+	a->cost_a = -1;
+	a->cost_b = -1;
 	a->next = NULL;
 	a->prev = NULL;
 	return(a);
