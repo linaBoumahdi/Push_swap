@@ -6,7 +6,7 @@
 /*   By: lboumahd <lboumahd@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 16:12:17 by lboumahd          #+#    #+#             */
-/*   Updated: 2024/07/13 17:06:37 by lboumahd         ###   ########.fr       */
+/*   Updated: 2024/07/18 13:28:23 by lboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,18 @@ void	swap(t_pile **a)
 	(*a)->next = tmp;
 	tmp->prev = *a;
 }
+// void swap(t_pile **a) {
+//     if (!*a || !(*a)->next) return;
+//     t_pile *first = *a;
+//     t_pile *second = first->next;
+//     first->next = second->next;
+//     if (second->next)
+//         second->next->prev = first;
+//     second->next = first;
+//     second->prev = first->prev;
+//     first->prev = second;
+//     *a = second;
+// }
 
 void	sa(t_pile **a)
 {

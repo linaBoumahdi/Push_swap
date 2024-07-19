@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboumahd <lboumahd@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:09:12 by lboumahd          #+#    #+#             */
-/*   Updated: 2024/07/16 11:32:11 by lboumahd         ###   ########.fr       */
+/*   Updated: 2024/07/18 20:34:30 by lboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,19 +64,27 @@ void	push_in_b(t_pile **a, t_pile **b)
 		size --;
 	}
 }
-// void	sort(t_pile **a, t_pile **b)
-// {
-// 	if(!is_sorted(a))
-// 		basic_sort(a);
-// 	while(*b)
-// 	{
-// 		get_position(a, b);
-// 		get_target(a, b);
-// 		get_cost(a, b);
-// 		do_best_move(a, b);
-// 	}
-// 	if(!is_sorted(a))
-		// get_position(a, b);
-// 		final_rotation(a);
-// }
 
+void	sort(t_pile **a, t_pile **b)
+{
+	if(!is_sorted(*a))
+		basic_sort(a);
+	while(*b)
+	{
+		get_position(a, b);
+		get_target_pos(a, b);
+		push_cost(a, b);
+		best_move(a, b);
+		pa(a, b);
+	}
+	if(!is_sorted(*a))
+	{
+		get_position(a, b);
+		final_rotation(a);
+	}
+}
+
+// a faire : 
+// 	test move 
+// 	code final rotation
+// 	code basic sort 

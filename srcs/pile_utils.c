@@ -6,25 +6,30 @@
 /*   By: lboumahd <lboumahd@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:23:21 by lboumahd          #+#    #+#             */
-/*   Updated: 2024/07/16 12:42:34 by lboumahd         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:03:35 by lboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
 t_pile *set_node(int nbr)
 {
-	t_pile	*a;
+    t_pile *a;
 
-	a->value = nbr;
-	a->idx = 0;
-	a->pos = -1;
-	a->target_pos = -1;
-	a->cost_a = -1;
-	a->cost_b = -1;
-	a->next = NULL;
-	a->prev = NULL;
-	return(a);
+	a = malloc(sizeof(t_pile));
+    if (!a)
+        return NULL;
+
+    a->value = nbr;
+    a->idx = 0;
+    a->pos = -1;
+    a->target_pos = -1;
+    a->cost_a = -1;
+    a->cost_b = -1;
+    a->next = NULL;
+    a->prev = NULL;
+    return (a);
 }
 void	add_to_pile(t_pile **a, int nbr)
 {
@@ -33,10 +38,9 @@ void	add_to_pile(t_pile **a, int nbr)
 
 	if (!a)
 		return ;
-	node = malloc (sizeof(t_pile));
+	node = set_node(nbr);
 	if (!node)
 		return ;
-	node = set_node(nbr);
 	if (!(*a))
 	{
 		node->prev = NULL;

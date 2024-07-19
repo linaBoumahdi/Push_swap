@@ -6,7 +6,7 @@
 /*   By: lboumahd <lboumahd@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 19:26:18 by lboumahd          #+#    #+#             */
-/*   Updated: 2024/07/11 18:56:34 by lboumahd         ###   ########.fr       */
+/*   Updated: 2024/07/19 12:30:10 by lboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ void	exit_error(void)
 
 void	free_pile(t_pile *a)
 {
-	t_pile *temp;
+	t_pile	*temp;
 
 	while (a != NULL)
 	{
 		temp = a->next;
-		free(a); 
+		free (a);
 		a = temp;
 	}
 	a = NULL;
@@ -45,8 +45,8 @@ void	free_pile(t_pile *a)
 
 void	error_input(t_pile *a, char **av, int ac)
 {
-	free_pile(a);
-	if(ac == 2)
-		free_av(av);  
+	free_pile (a);
+	if (ac == 2)
+		free_av (av);
 	exit_error();
 }

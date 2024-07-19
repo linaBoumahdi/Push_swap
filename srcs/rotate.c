@@ -6,7 +6,7 @@
 /*   By: lboumahd <lboumahd@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 16:12:15 by lboumahd          #+#    #+#             */
-/*   Updated: 2024/07/13 12:41:55 by lboumahd         ###   ########.fr       */
+/*   Updated: 2024/07/18 13:27:58 by lboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,18 @@ void	rotate(t_pile **a)
 	(*a)->prev = NULL;
 	last->next->next = NULL;
 }
-
+// void rotate(t_pile **a) {
+//     if (!*a || !(*a)->next) return;
+//     t_pile *tmp = *a;
+//     *a = (*a)->next;
+//     (*a)->prev = NULL;
+//     while (tmp->next) {
+//         tmp = tmp->next;
+//     }
+//     tmp->next = (*a)->prev;
+//     (*a)->prev->next = NULL;
+//     (*a)->prev->prev = tmp;
+// }
 void	ra(t_pile **a)
 {
 	rotate(a);

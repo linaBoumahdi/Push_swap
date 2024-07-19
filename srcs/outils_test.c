@@ -35,7 +35,10 @@ void append_node(t_pile **head, int value) {
 void print_list(t_pile *head) {
     t_pile *tmp = head;
     while (tmp != NULL) {
-        printf("Value: %d, Index: %d\n Pos : %d\n, target_pos : %d\n", tmp->value, tmp->idx, tmp->pos, tmp->target_pos);
+        // printf("Value: %d, Index: %d\n Pos : %d\n, target_pos : %d\n", tmp->value, tmp->idx, tmp->pos, tmp->target_pos);
+		// printf("Pos : %d\n, target_pos : %d\n", tmp->pos, tmp->target_pos);
+		// printf("Cost_a : %d Cost_b : %d\n", tmp->cost_a, tmp->cost_b);
+		printf("Value %d", tmp->value);
         tmp = tmp->next;
     }
 }
@@ -52,7 +55,18 @@ int ft_pile_line(t_pile *a) {
     }
     return size;
 }
-
+int	is_sorted(t_pile *a)
+{
+	if ((!a || !a->next))
+		return 1;
+	while (a->next)
+	{
+		if (a->value > a->next->value)
+			return (0);
+		a = a->next;
+	}
+	return (1);
+}
 
 
 
@@ -66,15 +80,15 @@ int main() {
    
     append_node(&head, 35);
 	 append_node(&head, 8);
-    
-	append_node(&head, 105);
-	 append_node(&head, 100);
-	 append_node(&head, 521);
-   	append_node(&head, 9);
-	append_node(&head, 6);
+   	basic_sort(&head);
+	// append_node(&head, 105);
+	//  append_node(&head, 100);
+	//  append_node(&head, 521);
+   	// append_node(&head, 9);
+	// append_node(&head, 6);
    
-	append_node(&head, 41);
-	append_node(&head, 100);
+	// append_node(&head, 41);
+	// append_node(&head, 100);
 	// append_node(&head, 3);
 	// append_node(&head,33);
    
@@ -82,14 +96,15 @@ int main() {
 	
 
     // Call the set_index function
-    set_index(head);
-	push_in_b(&head, &new);
-	get_position(&head, &new);
+    // set_index(head);
+	// push_in_b(&head, &new);
+	// get_position(&head, &new);
 	
-	get_target_pos(&head, &new);
+	// get_target_pos(&head, &new);
+	// push_cost(&head, &new);
     print_list(head);
-	printf("new\n");
-	print_list(new);
+	// printf("new\n");
+	// print_list(new);
 	
 
     // Free the list

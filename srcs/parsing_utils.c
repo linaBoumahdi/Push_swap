@@ -6,7 +6,7 @@
 /*   By: lboumahd <lboumahd@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:53:32 by lboumahd          #+#    #+#             */
-/*   Updated: 2024/07/13 12:38:20 by lboumahd         ###   ########.fr       */
+/*   Updated: 2024/07/18 21:23:16 by lboumahd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,14 @@ void	fill_pile(t_pile **a, char **av, int ac)
 	long	nbr;
 	int		sign;
 
-	sign = 1;
+	
 	if (ac == 2)
 		i = 0;
 	else
 		i = 1;
 	while (av[i])
 	{
+		sign = 1;
 		if (is_number(av[i]) == 1)
 			error_input(*a, av, ac);
 		nbr = ft_atol(av[i], &sign);
@@ -75,7 +76,7 @@ void	fill_pile(t_pile **a, char **av, int ac)
 		add_to_pile(a, nbr);
 		i++;
 	}
-} 
+}
 
 int	is_sorted(t_pile *a)
 {
